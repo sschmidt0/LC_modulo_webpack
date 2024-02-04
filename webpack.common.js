@@ -25,6 +25,11 @@ export default {
         test: /\.(png|jpg|jpeg)$/,
         type: "asset/resource",
       },
+      {
+        test: /\.html$/,
+        exclude: /node_modules/,
+        loader: "html-loader",
+      },
     ],
   },
   plugins: [
