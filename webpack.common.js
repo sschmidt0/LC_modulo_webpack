@@ -9,7 +9,7 @@ export default {
   resolve: {
     extensions: [".js", ".ts"],
   },
-  entry: { app: "./index.ts" },
+  entry: { app: "./index.ts", styles: "./index.scss" },
   output: {
     filename: "[name].[chunkhash].js",
     clean: true,
