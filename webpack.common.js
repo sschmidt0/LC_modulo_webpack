@@ -1,0 +1,37 @@
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import path from "path";
+import url from "url";
+
+const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
+
+export default {
+  context: path.resolve(__dirname, "src"),
+  resolve: {
+    extensions: [".js", ".ts"],
+  },
+  entry: { app: "./index.ts" },
+  output: {
+    filename: "[name].[chunkhash].js",
+    clean: true,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        loader: "babel-loader",
+      },
+      {
+        test: /\.(png|jpg|jpeg)$/,
+        type: "asset/resource",
+      },
+    ],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "index.html",
+      filename: "index.html",
+      scriptLoading: "blocking",
+    }),
+  ],
+};
