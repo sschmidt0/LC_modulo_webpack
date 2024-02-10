@@ -7,9 +7,9 @@ const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 export default {
   context: path.resolve(__dirname, "src"),
   resolve: {
-    extensions: [".js", ".ts"],
+    extensions: [".js", ".ts", ".tsx"],
   },
-  entry: { app: "./index.ts", styles: "./index.scss" },
+  entry: { app: "./index.tsx", styles: "./index.scss" },
   output: {
     filename: "[name].[chunkhash].js",
     clean: true,
@@ -17,7 +17,7 @@ export default {
   module: {
     rules: [
       {
-        test: /\.ts$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         loader: "babel-loader",
       },
