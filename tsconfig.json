@@ -10,7 +10,11 @@
     "jsx": "react",
     "noLib": false,
     "skipLibCheck": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "paths": {
+ 		  "@common/*": ["./src/common/*"],
+			"@helpers/*": ["./src/helpers/*"],
+		}
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]

@@ -8,6 +8,10 @@ export default {
   context: path.resolve(__dirname, "src"),
   resolve: {
     extensions: [".js", ".ts", ".tsx"],
+    alias: {
+      "@common": path.resolve(__dirname, "src/common"),
+      "@helpers": path.resolve(__dirname, "src/helpers"),
+    },
   },
   entry: { app: "./index.tsx", styles: "./index.scss" },
   output: {
