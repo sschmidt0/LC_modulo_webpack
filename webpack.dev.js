@@ -1,4 +1,5 @@
 import { merge } from "webpack-merge";
+import Dotenv from "dotenv-webpack";
 import common from "./webpack.common.js";
 import path from "path";
 import url from "url";
@@ -29,4 +30,9 @@ export default merge(common, {
       },
     ],
   },
+  plugins: [
+    new Dotenv({
+      path: "./dev.env",
+    }),
+  ],
 });
